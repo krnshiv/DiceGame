@@ -1,4 +1,5 @@
 
+#BST with leftTreeSize to get cuuent ranking 
 class RankTree:
     def __init__(self,i, val):
         self.id = i

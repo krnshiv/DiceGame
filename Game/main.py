@@ -53,7 +53,7 @@ def play_round(Players,ordering,n,m,current_player):
                     if Players[ordering[current_player]].score >= m:
                         return current_player
 
-            #if 1 id rolled more than once consecutively
+            #if 1 did roll up more than once consecutively
                 if d==1 and Players[ordering[current_player]].last_roll==1:
                     Players[ordering[current_player]].is_penalized=True
                 
@@ -61,15 +61,19 @@ def play_round(Players,ordering,n,m,current_player):
                 if Players[ordering[current_player]].score >= m:
                     return current_player
 
-            #function to get unction to get ranking after every move using inorder traversal
+            #function to get unction to get curent ranking of all players still in the Game after rolled Dice using inorder traversal
 
                 for i in ordering:
                     ranker.add(i,Players[i].score)
                 get_ranking(ranker)
-            
+
+            #updated last_rolled value
                 Players[ordering[current_player]].last_roll=d
 
-            if Players[ordering[current_player]].last_roll==1 and Players[ordering[current_player]].is_penalized==True: Players[ordering[current_player]].is_penalized=False
+            #after one Move skip we can unpenialize
+            else:
+                Players[ordering[current_player]].is_penalized=True
+            
             current_player+=1
             current_player=current_player%(n-1) #robin-round
 
