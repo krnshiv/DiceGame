@@ -1,0 +1,6 @@
+*.cfg
+bin/
+__pycache__/
+include/
+lib/
+lib64/
