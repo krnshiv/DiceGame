@@ -6,4 +6,4 @@ if your system has python3:
     Enter 'n' No. of players, 'm' Points to be obtained
 
     ...then
-    follow instructions on screep
+    follow instructions on screen
